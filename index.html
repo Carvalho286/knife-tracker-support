@@ -3,96 +3,254 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KnifeTracker Support</title>
+<title>Knife Tracker — by Studio Vortexa</title>
+
 <style>
     body {
         font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-        background: #f8f8f8;
         margin: 0;
-        padding: 40px 20px;
+        background: #f7f7f7;
         color: #111;
+        overflow-x: hidden;
+    }
+
+    /* Fade + Slide animations */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.9s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .delay-1 { animation-delay: 0.15s; }
+    .delay-2 { animation-delay: 0.3s; }
+    .delay-3 { animation-delay: 0.45s; }
+    .delay-4 { animation-delay: 0.6s; }
+    .delay-5 { animation-delay: 0.75s; }
+
+    .nav {
         display: flex;
-        justify-content: center;
-    }
-    .container {
-        max-width: 650px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 40px;
         background: white;
-        padding: 40px;
-        border-radius: 22px;
-        box-shadow: 0 5px 22px rgba(0,0,0,0.08);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 20;
     }
-    h1 {
+
+    .nav .title {
+        font-weight: 700;
+        font-size: 20px;
+    }
+
+    .nav .studio {
+        font-weight: 500;
+        color: #555;
+        font-size: 15px;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 90px 20px 70px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        color: #555;
+        max-width: 600px;
+        margin: 0 auto 35px;
+    }
+
+    .download {
+        display: inline-block;
+        background: #111;
+        color: white;
+        padding: 14px 28px;
+        border-radius: 14px;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: opacity 0.2s;
+    }
+
+    .download:hover {
+        opacity: 0.8;
+    }
+
+    .section {
+        padding: 70px 20px;
+        max-width: 950px;
+        margin: auto;
+    }
+
+    .section h2 {
         font-size: 32px;
-        margin: 0 0 10px;
+        margin-bottom: 18px;
         font-weight: 700;
     }
-    p.subtitle {
-        color: #555;
-        margin-bottom: 30px;
-        font-size: 17px;
+
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 35px;
+        margin-top: 40px;
     }
-    h2 {
-        margin-top: 35px;
+
+    .feature-box {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+    }
+
+    .feature-box h3 {
+        margin-top: 0;
         font-size: 22px;
     }
+
+    .faq-item {
+        margin-bottom: 25px;
+    }
+
+    .faq-item h4 {
+        margin: 0 0 8px;
+        font-size: 20px;
+    }
+
+    .faq-item p {
+        margin: 0;
+        color: #555;
+        line-height: 1.6;
+    }
+
     .contact-box {
-        background: #f2f2f2;
-        padding: 16px 18px;
-        border-radius: 14px;
-        margin-top: 10px;
-        font-size: 16px;
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+        margin-top: 20px;
+        font-size: 18px;
     }
-    .email {
-        font-weight: 600;
-        color: #0066ff;
-    }
-    ul {
-        margin-top: 12px;
-        padding-left: 20px;
-    }
-    footer {
-        margin-top: 45px;
-        text-align: center;
-        color: #777;
-        font-size: 14px;
-    }
-    a {
+
+    .contact-box a {
         color: #0066ff;
         text-decoration: none;
+    }
+
+    footer {
+        padding: 35px;
+        text-align: center;
+        color: #777;
+        background: #fafafa;
+        margin-top: 60px;
+        font-size: 15px;
+    }
+
+    footer a {
+        color: #0066ff;
+        text-decoration: none;
+        margin-left: 12px;
     }
 </style>
 </head>
 
 <body>
-<div class="container">
-    <h1>KnifeTracker Support</h1>
-    <p class="subtitle">We’re here to help you get the most out of KnifeTracker.</p>
 
+<!-- Navigation -->
+<div class="nav fade-up">
+    <div class="title">Knife Tracker</div>
+    <div class="studio">by Studio Vortexa</div>
+</div>
+
+<!-- Hero -->
+<div class="hero fade-up delay-1">
+    <h1>Track CS2 Skin Prices Instantly</h1>
+    <p>The fastest, cleanest and most accurate way to monitor CS2 market prices and receive instant alerts — built with precision by Studio Vortexa.</p>
+
+    <a class="download" href="#">Download on the App Store</a>
+</div>
+
+<!-- Features Section -->
+<div class="section fade-up delay-2">
+    <h2>Powerful Features</h2>
+
+    <div class="features">
+        <div class="feature-box fade-up delay-3">
+            <h3>Real-Time Price Tracking</h3>
+            <p>Always stay updated with accurate, live prices from the most famous marketplaces.</p>
+        </div>
+
+        <div class="feature-box fade-up delay-3">
+            <h3>Instant Alerts</h3>
+            <p>Get notified the moment a skin drops or rises to your target price.</p>
+        </div>
+
+        <div class="feature-box fade-up delay-3">
+            <h3>Favorites & Clean UI</h3>
+            <p>Organize important skins and navigate smoothly with a minimalistic interface.</p>
+        </div>
+
+        <div class="feature-box fade-up delay-3">
+            <h3>Multicurrency Support</h3>
+            <p>Track prices in EUR, USD and GBP automatically, with reliable conversion.</p>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="section fade-up delay-3">
     <h2>Frequently Asked Questions</h2>
-    <ul>
-        <li><strong>Why am I not receiving notifications?</strong><br>
-        Ensure notifications are enabled in system settings and alerts are active in the app.</li>
 
-        <li><strong>How often are prices updated?</strong><br>
-        Prices refresh automatically based on Steam Market data.</li>
-
-        <li><strong>Do I need an account?</strong><br>
-        No — the app works instantly without registration.</li>
-    </ul>
-
-    <h2>Contact Support</h2>
-    <p>If you need help, feel free to contact us.</p>
-
-    <div class="contact-box">
-        Email: <span class="email">support@knifetracker.app</span><br>
-        Typical response time: under 24 hours.
+    <div class="faq-item">
+        <h4>Why am I not receiving notifications?</h4>
+        <p>Make sure app notifications are enabled in iOS Settings and the alert is active inside Knife Tracker.</p>
     </div>
 
-    <footer>
-        <a href="privacy.html">Privacy Policy</a>
-        <br><br>
-        KnifeTracker © 2025. All rights reserved.
-    </footer>
+    <div class="faq-item">
+        <h4>Do I need to create an account?</h4>
+        <p>No. Knife Tracker works instantly without requiring login.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>How often are prices updated?</h4>
+        <p>Prices refresh dynamically based on data availability from marketplaces.</p>
+    </div>
+
+    <div class="faq-item">
+        <h4>Are more marketplaces supported?</h4>
+        <p>In the future, we plan to add support for additional marketplaces to provide more comprehensive price tracking.</p>
+    </div>
 </div>
+
+<!-- Contact Section -->
+<div class="section fade-up delay-4">
+    <h2>Contact Support</h2>
+    <p>If you need help, feel free to reach out.</p>
+
+    <div class="contact-box">
+        Email us at <a href="mailto:support@studiovortexa.com">support@studiovortexa.com</a><br>
+        Typical response time: under 24 hours.
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="fade-up delay-5">
+    Knife Tracker © 2025 — by Studio Vortexa
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+</footer>
+
 </body>
 </html>
